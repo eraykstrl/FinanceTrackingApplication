@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/routerFragment">
+
+    <fragment
+        android:id="@+id/routerFragment"
+        android:name="com.example.financetrackingapplication.view.RouterFragment"
+        android:label="RouterFragment" >
+        <action
+            android:id="@+id/action_routerFragment_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
+        <action
+            android:id="@+id/action_routerFragment_to_expensesFragment"
+            app:destination="@id/expensesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/incomeFragment"
+        android:name="com.example.financetrackingapplication.view.IncomeFragment"
+        android:label="fragment_income"
+        tools:layout="@layout/fragment_income" >
+        <action
+            android:id="@+id/action_incomeFragment_to_routerFragment"
+            app:destination="@id/routerFragment" />
+        <action
+            android:id="@+id/action_incomeFragment_to_addNewIncomesFragment"
+            app:destination="@id/addNewIncomesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="com.example.financetrackingapplication.view.ExpensesFragment"
+        android:label="fragment_expenses"
+        tools:layout="@layout/fragment_expenses" >
+        <action
+            android:id="@+id/action_expensesFragment_to_routerFragment"
+            app:destination="@id/routerFragment" />
+        <action
+            android:id="@+id/action_expensesFragment_to_addNewExpensesFragment"
+            app:destination="@id/addNewExpensesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewExpensesFragment"
+        android:name="com.example.financetrackingapplication.view.AddNewExpensesFragment"
+        android:label="fragment_add_new_expenses"
+        tools:layout="@layout/fragment_add_new_expenses" >
+        <argument
+            android:name="bilgi"
+            app:argType="integer" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewIncomesFragment"
+        android:name="com.example.financetrackingapplication.view.AddNewIncomesFragment"
+        android:label="fragment_add_new_incomes"
+        tools:layout="@layout/fragment_add_new_incomes" >
+        <argument
+            android:name="bilgi"
+            app:argType="integer" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
